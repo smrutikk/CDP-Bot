@@ -85,6 +85,7 @@ Update the keys in scraper.py
 SignUp to the OpenAI platform --> Navigate to API keys on Navigation tab --> Create new secret key 
 SignUp to the Pinecone platform --> Generate API key 
 
+---
 
 
 
