@@ -24,6 +24,8 @@ A powerful Customer Data Platform (CDP) assistant bot designed to streamline pla
   - `pinecone-client` (for embedding-based queries)
 
 ---
+## Deployment Link
+https://cdp-chat-bot.netlify.app/
 
 ## Installation
 
@@ -96,43 +98,9 @@ Returns:
 }
 ```
 
----
 
-## How It Works
 
-1. **Query Handling:**
-   - Embeddings are used to find relevant documentation.
-   - Falls back to scraping if embeddings yield no results.
 
-2. **Documentation Scraping:**
-   - Uses BeautifulSoup to extract useful data from the platform's official documentation.
 
-3. **Step-by-Step Guide Generation:**
-   - Leverages OpenAI to generate actionable guides based on the query.
 
----
 
-## Contributing
-
-Contributions are welcome! To contribute:
-1. Fork the repository.
-2. Create a new branch: `git checkout -b feature/your-feature`.
-3. Commit your changes: `git commit -m "Add your feature"`.
-4. Push to the branch: `git push origin feature/your-feature`.
-5. Open a pull request.
-
----
-
-## License
-
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
-
----
-
-## Acknowledgements
-
-- Flask for backend support.
-- React for frontend development.
-- OpenAI for natural language processing.
-- Pinecone for embeddings.
-- BeautifulSoup for web scraping.
