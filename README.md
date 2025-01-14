@@ -72,37 +72,19 @@ https://cdp-chat-bot.netlify.app/
 
 ## API Endpoints
 
-### 1. `GET /`
-Serves the React frontend.
-
-### 2. `POST /query`
+### 1. Replace the API endpoint 
 Accepts JSON payload:
 ```json
 {
-  "platform": "platform_name",
-  "query": "your_query"
-}
-```
-Returns:
-```json
-{
-  "response": "relevant_documentation_or_scraped_data"
+  OPENAI_API_KEY = "your_new_openai_key"
+  PINECONE_API_KEY = "your_new_pinecone_key"
 }
 ```
 
-### 3. `POST /ask`
-Accepts form data:
-- `query`: User's query.
-- `platform`: Platform name.
+### 2. Geting API key 
+SignUp to the OpenAI platform --> Navigate to API keys on Navigation tab --> Create new secret key 
+SignUp to the Pinecone platform --> Generate API key 
 
-Returns:
-```json
-{
-  "scraped_docs": "scraped_results",
-  "relevant_docs": "relevant_documents",
-  "step_by_step_guide": "generated_steps"
-}
-```
 
 
 
