@@ -1,7 +1,7 @@
 
 # CDP Bot
 
-A powerful Customer Data Platform (CDP) assistant bot designed to streamline platform documentation queries and guide generation. This project integrates a Flask backend with a React frontend to deliver a seamless experience for developers.
+A Customer Data Platform (CDP) assistant bot designed to streamline platform documentation queries and guide generation. This project integrates a Flask backend with a React frontend to deliver a seamless experience for developers.
 
 ## Features
 
