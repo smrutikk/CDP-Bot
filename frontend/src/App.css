@@ -1,4 +1,4 @@
-/* styles.css */
+/* App.css */
 
 /* Chatbox container */
 .chat-container {
@@ -10,6 +10,8 @@
   flex-direction: column;
   border-radius: 10px;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  overflow: hidden;
 }
 
 /* Card header */
@@ -67,6 +69,47 @@ button {
   color: #333;
 }
 
+/* Examples section */
+.examples {
+  background: #f8f9fa;
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.examples h3 {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.examples ul {
+  list-style: disc;
+  margin-left: 1.5rem;
+}
+
+/* Feedback section */
+.feedback {
+  margin-top: 0.5rem;
+  display: flex;
+  gap: 0.5rem;
+}
+
+.feedback p {
+  margin: 0;
+}
+
+.btn-feedback {
+  background-color: #e9ecef;
+  border: none;
+  border-radius: 4px;
+  padding: 0.25rem 0.5rem;
+  cursor: pointer;
+}
+
+.btn-feedback:hover {
+  background-color: #dee2e6;
+}
+
 /* Loading state */
 .loading-message {
   display: flex;
@@ -78,9 +121,12 @@ button {
   color: #333;
 }
 
+/* Chat input section */
 .chat-input {
   padding: 1rem;
   border-top: 1px solid #eaeaea;
+  display: flex;
+  align-items: center;
 }
 
 .chat-input .input-field {

@@ -38,28 +38,38 @@ const CDPChatbot = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (!inputValue.trim()) return;
-
+  
     // Add user message
     const userMessage = inputValue.trim();
     setMessages(prev => [...prev, { type: 'user', text: userMessage }]);
     setInputValue('');
     setIsLoading(true);
-
-    // Simulate bot response - replace with actual API call
-    setTimeout(() => {
-      let botResponse;
-      if (userMessage.toLowerCase().includes('segment')) {
-        botResponse = "To set up a new source in Segment:\n1. Navigate to Connections > Sources\n2. Click 'Add Source'\n3. Select your source type\n4. Configure the source settings\n5. Verify the connection";
-      } else if (userMessage.toLowerCase().includes('mparticle')) {
-        botResponse = "To create a user profile in mParticle:\n1. Go to User Profiles section\n2. Click 'Create New Profile'\n3. Define profile attributes\n4. Set identity mappings\n5. Save the profile";
+  
+    try {
+      // Make API call to Flask backend
+      const response = await fetch('http://127.0.0.1:5000/ask', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ question: userMessage }),
+      });
+  
+      const data = await response.json();
+  
+      if (data.answer) {
+        setMessages(prev => [...prev, { type: 'bot', text: data.answer }]);
       } else {
-        botResponse = "I can help you with questions about Segment, mParticle, Lytics, or Zeotap. Please specify which CDP you're asking about.";
+        setMessages(prev => [...prev, { type: 'bot', text: 'Sorry, I could not process your request.' }]);
       }
-      
-      setMessages(prev => [...prev, { type: 'bot', text: botResponse }]);
-      setIsLoading(false);
-    }, 1000);
+    } catch (error) {
+      console.error("Error:", error);
+      setMessages(prev => [...prev, { type: 'bot', text: 'Something went wrong. Please try again later.' }]);
+    }
+  
+    setIsLoading(false);
   };
+  
 
   const handleReset = () => {
     setMessages([{

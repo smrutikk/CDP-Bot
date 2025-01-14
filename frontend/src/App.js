@@ -1,15 +1,25 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { Send, RotateCcw } from 'lucide-react';
-import './App.css';
-
+import '../src/App.css';
 
 const ChatMessage = ({ message, type }) => (
   <div className={`chat-message ${type === 'user' ? 'user' : 'bot'}`}>
     <div className="chat-message-content">
       {message}
     </div>
+    {type === 'bot' && (
+      <div className="feedback">
+        <p>Was this response helpful?</p>
+        <button className="btn-feedback" onClick={() => handleFeedback(true)}>Yes</button>
+        <button className="btn-feedback" onClick={() => handleFeedback(false)}>No</button>
+      </div>
+    )}
   </div>
 );
+
+const handleFeedback = (isHelpful) => {
+  console.log(`User feedback: ${isHelpful ? 'Helpful' : 'Not Helpful'}`);
+};
 
 const CDPChatbot = () => {
   const [messages, setMessages] = useState([
@@ -42,7 +52,7 @@ const CDPChatbot = () => {
 
     try {
       // Make API call to Flask backend
-      const response = await fetch('http://127.0.0.1:5000/ask', {
+      const response = await fetch('http://127.0.0.1:3000/ask', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -85,9 +95,22 @@ const CDPChatbot = () => {
 
       <div className="flex-1 overflow-y-auto p-4">
         <div className="space-y-4">
+          {/* Add examples of questions */}
+          <div className="examples">
+            <h3>Try asking:</h3>
+            <ul>
+              <li>How do I set up a source in Segment?</li>
+              <li>How can I integrate data with Zeotap?</li>
+              <li>What’s the difference between Segment and Lytics?</li>
+            </ul>
+          </div>
+
+          {/* Render messages */}
           {messages.map((message, index) => (
             <ChatMessage key={index} message={message.text} type={message.type} />
           ))}
+
+          {/* Show typing indicator */}
           {isLoading && (
             <div className="loading-message">
               <div className="chat-message-content">Typing...</div>
