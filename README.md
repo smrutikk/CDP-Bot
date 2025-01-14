@@ -73,7 +73,7 @@ https://cdp-chat-bot.netlify.app/
 ## API Endpoints
 
 ### 1. Replace the API endpoint 
-Accepts JSON payload:
+Update the keys in scraper.py
 ```js
 {
   OPENAI_API_KEY = "your_new_openai_key"
