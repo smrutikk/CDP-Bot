@@ -1,0 +1,95 @@
+/* styles.css */
+
+/* Chatbox container */
+.chat-container {
+  width: 100%;
+  max-width: 700px;
+  margin: 0 auto;
+  height: 600px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Card header */
+.card-header {
+  border-bottom: 1px solid #eaeaea;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+}
+
+/* Card title */
+.card-title {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #333;
+}
+
+/* Button styling */
+button {
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  border: 1px solid #eaeaea;
+  background-color: transparent;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Chat message */
+.chat-message {
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.chat-message.user {
+  justify-content: flex-end;
+}
+
+.chat-message-content {
+  border-radius: 10px;
+  padding: 1rem;
+  max-width: 80%;
+}
+
+.chat-message.user .chat-message-content {
+  background-color: #1d4ed8;
+  color: white;
+}
+
+.chat-message.bot .chat-message-content {
+  background-color: #f3f4f6;
+  color: #333;
+}
+
+/* Loading state */
+.loading-message {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.loading-message .chat-message-content {
+  background-color: #f3f4f6;
+  color: #333;
+}
+
+.chat-input {
+  padding: 1rem;
+  border-top: 1px solid #eaeaea;
+}
+
+.chat-input .input-field {
+  flex-grow: 1;
+  padding: 0.75rem;
+  border-radius: 5px;
+  border: 1px solid #eaeaea;
+}
+
+.chat-input button {
+  margin-left: 1rem;
+}
