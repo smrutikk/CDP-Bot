@@ -74,7 +74,7 @@ https://cdp-chat-bot.netlify.app/
 
 ### 1. Replace the API endpoint 
 Accepts JSON payload:
-```json
+```js
 {
   OPENAI_API_KEY = "your_new_openai_key"
   PINECONE_API_KEY = "your_new_pinecone_key"
