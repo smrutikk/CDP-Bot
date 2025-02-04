@@ -1,10 +1,16 @@
 /* App.css */
+body {
+  background-color: #d4d4f7; /* Light grayish-blue background */
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
 
 /* Chatbox container */
 .chat-container {
   width: 100%;
-  max-width: 700px;
+  max-width: 1200px;
   margin: 0 auto;
+  margin-top: 5%;
   height: 600px;
   display: flex;
   flex-direction: column;
@@ -127,6 +133,7 @@ button {
   border-top: 1px solid #eaeaea;
   display: flex;
   align-items: center;
+  max-width: fit-content;
 }
 
 .chat-input .input-field {
@@ -134,6 +141,7 @@ button {
   padding: 0.75rem;
   border-radius: 5px;
   border: 1px solid #eaeaea;
+  
 }
 
 .chat-input button {
