@@ -13,6 +13,12 @@ A Customer Data Platform (CDP) assistant bot designed to streamline platform doc
 
 ---
 
+## Screenshots
+
+![](img/SS_1.png)
+
+---
+
 ## Tech Stack
 
 - **Backend:** Flask, Flask-CORS
