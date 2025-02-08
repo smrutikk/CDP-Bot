@@ -15,7 +15,7 @@ A Customer Data Platform (CDP) assistant bot designed to streamline platform doc
 
 ## Screenshots
 
-![](img/SS_1.png)
+![](backend/SS_1.png)
 
 ---
 
